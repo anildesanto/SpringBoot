@@ -28,17 +28,17 @@ public class PersonController
 	}
 	
 	//get a person
-	@GetMapping("person/{id}")
+	@GetMapping("/person/{id}")
 	public PersonModel getPersonbyID(@PathVariable( value = "id") Long personID)
 	{
 		return myRepository.findById(personID).orElseThrow(() -> new ResourceNotFoundException("MySpringBootDataModel", "id", personID));	
 	}
-	//get a person
-	@GetMapping("person/{name}")
-	public PersonModel getPersonbyName(@PathVariable( value = "name") String personName)
-	{
-		return myRepository.findByName(personName).orElseThrow(() -> new ResourceNotFoundException("MySpringBootDataModel", "id", personName));	
-	}
+//	//get a person
+//	@GetMapping("/person/{name}")
+//	public PersonModel getPersonbyName(@PathVariable( value = "name") String personName)
+//	{
+//		return myRepository.findByName(personName).orElseThrow(() -> new ResourceNotFoundException("MySpringBootDataModel", "name", personName));	
+//	}
 	
 	//get all people
 	@GetMapping("/person")
